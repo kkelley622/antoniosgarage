@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <nav>
-      <li>Sobre Nosotros</li>
+    <ul>
+      <li><Link to='/sobre'>Sobre Nosotros</Link></li>
       <li>Localizacion</li>
-    </nav>
+    </ul>
   )
 }
 
