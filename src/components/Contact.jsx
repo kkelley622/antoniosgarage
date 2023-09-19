@@ -1,24 +1,35 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useState } from 'react'
 import { GoogleMap, useLoadScript } from '@react-google-maps/api'
 
 const Contact = () => {
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.AIzaSyBEJ1MD9CLuELvuu_PPfZxu6cZhqtxGMUU,
-  });
-  const center = useMemo(() => ({lat: 18.52043, lng: 73.856743}), []);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    text: ""
+  })
 
   return (
-    <div className='location'>
-    {!isLoaded ? (
-      <h1>Loading...</h1>
-    ) : (
-      <GoogleMap
-        mapContainerClassName="map-container"
-        center={center}
-        zoom={10}
-      />
-    )}
-  </div>
+    <div className='Contact'>
+      <form>
+        <div>
+          <label>Nombre: </label>
+          <input type='text' value={formData.name} placeholder='Su Nombre'></input>
+        </div>
+        <div>
+          <label>Email: </label>
+          <input type='email' value={formData.email} placeholder='Su Email'></input>
+        </div>
+        <div>
+          <label>Numero de Telefono: </label>
+          <input type='number' value={formData.phone} placeholder='Su Numero'></input>
+        </div>
+        <div>
+          <label>Problema: </label>
+          <input type='textarea' value={formData.text} placeholder='Que Paso'></input>
+        </div>
+      </form>
+    </div>
   );
 };
 
