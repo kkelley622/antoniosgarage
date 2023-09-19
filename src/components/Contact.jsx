@@ -7,27 +7,32 @@ const Contact = () => {
     email: "",
     phone: "",
     text: ""
-  })
+  });
+
+  const handleChange = (e) => {
+    setFormData({...formData, [e.target.name]: e.target.value})
+  }
 
   return (
     <div className='Contact'>
-      <form>
+      <form onChange={handleChange}>
         <div>
           <label>Nombre: </label>
-          <input type='text' value={formData.name} placeholder='Su Nombre'></input>
+          <input type='text' name='name' value={formData.name} placeholder='Su Nombre'></input>
         </div>
         <div>
           <label>Email: </label>
-          <input type='email' value={formData.email} placeholder='Su Email'></input>
+          <input type='email' name='email' value={formData.email} placeholder='Su Email'></input>
         </div>
         <div>
           <label>Numero de Telefono: </label>
-          <input type='number' value={formData.phone} placeholder='Su Numero'></input>
+          <input type='number' name='phone' value={formData.phone} placeholder='Su Numero'></input>
         </div>
         <div>
           <label>Problema: </label>
-          <input type='textarea' value={formData.text} placeholder='Que Paso'></input>
+          <input type='textarea' name='text' value={formData.text} placeholder='Que Paso'></input>
         </div>
+        <button type='submit'>Entregar</button>
       </form>
     </div>
   );
