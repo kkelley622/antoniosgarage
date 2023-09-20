@@ -14,24 +14,26 @@ const Contact = () => {
   }
 
   return (
-    <div className='Contact'>
+    <div className='form'>
+      <h1>Contact Form</h1>
+      <p>Please Fill Out this Form with the Required Information</p>
       <form onChange={handleChange}>
-        <div>
-          <label>Nombre: </label>
+        <fieldset>
+          <label for='name'>Nombre: </label>
           <input type='text' name='name' value={formData.name} placeholder='Su Nombre'></input>
-        </div>
-        <div>
-          <label>Email: </label>
+        </fieldset>
+        <fieldset>
+          <label for='email'>Email: </label>
           <input type='email' name='email' value={formData.email} placeholder='Su Email'></input>
-        </div>
-        <div>
-          <label>Numero de Telefono: </label>
+        </fieldset>
+        <fieldset>
+          <label for='phone'>Numero de Telefono: </label>
           <input type='number' name='phone' value={formData.phone} placeholder='Su Numero'></input>
-        </div>
-        <div>
-          <label>Problema: </label>
+        </fieldset>
+        <fieldset>
+          <label for='text'>Problema: </label>
           <input type='textarea' name='text' value={formData.text} placeholder='Que Paso'></input>
-        </div>
+        </fieldset>
         <button type='submit'>Entregar</button>
       </form>
     </div>
