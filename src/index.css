@@ -26,8 +26,13 @@ nav li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  border-radius: 45px;
 }
 
 li a:hover {
   background-color: red ;
+}
+
+.footer {
+  border-bottom: 0px;
 }
