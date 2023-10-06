@@ -34,5 +34,8 @@ li a:hover {
 }
 
 .footer {
-  border-bottom: 0px;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  height: 2.5rem;
 }
